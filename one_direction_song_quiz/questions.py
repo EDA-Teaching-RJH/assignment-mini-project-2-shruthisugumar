@@ -3,7 +3,7 @@ class Question:
         self.song = song
         self.question = question
         self.options = options
-        self.options = answer
+        self.answer = answer
 def display (self):
     print("\n", self.question)
     for option in self.options:
