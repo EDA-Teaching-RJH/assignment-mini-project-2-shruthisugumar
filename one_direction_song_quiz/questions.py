@@ -4,3 +4,7 @@ class Question:
         self.question = question
         self.options = options
         self.options = answer
+def display (self):
+    print("\n", self.question)
+    for option in self.options:
+        print(option)
