@@ -65,4 +65,9 @@ class QuizGame:
             self.current_question_index = int(data[0])
             self.score = int(data[1])
         self.ask_questions()
+
+    def restart_quiz(self):
+        self.score = 0
+        self.current_question_index = 0 
+        self.ask_questions()
             
