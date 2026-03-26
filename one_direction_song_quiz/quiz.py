@@ -50,5 +50,10 @@ class QuizGame:
             self.current_question_index +=1
         print("Your final score:", self.score)
         self.save_score()
+
+    def save_score(self):
+        with open("results.txt", "a") as f:
+            f.write(str(self.score) + "\n")
         
+    
             
