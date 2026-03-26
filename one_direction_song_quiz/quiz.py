@@ -32,4 +32,23 @@ class QuizGame:
         self.current_question_index = 0
         self ask_questions()
 
-    
+    def ask_questions(self):
+        while self.current_question_index < len(self.questions):
+            q = self.questions[self.current_question_index]
+            q.display()
+            print("(type pause to stop quiz)")
+            user_answer = input("answer: ")
+            if user_answer.lower() == "pause":
+                self.save_progress()
+                print("Quiz Paused.")
+                return
+            if self.check_answer(user_answer, q.answer):
+                print("Correct!")
+                self.score += 1
+            else: 
+                print("Incorrect :(")
+            self.current_question_index +=1
+        print("Your final score:", self.score)
+        self.save_score()
+        
+            
