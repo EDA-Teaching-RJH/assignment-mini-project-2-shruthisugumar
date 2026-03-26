@@ -5,3 +5,10 @@ class Question:
         self.question = question
         self.options = options
         self.answer = answer
+
+    def display(self):
+
+        print("\n" + self.options)
+        
+        for option in self.options:
+            print(option)
