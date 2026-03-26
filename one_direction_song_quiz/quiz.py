@@ -58,5 +58,11 @@ class QuizGame:
     def save_progress(self):
         with open("progress.txt", "w") as f:
             f.write(str(self.current_question_index) + "," + str(self.score))
-            
+
+    def resume_quiz(self): 
+        with open("progress.txt", "r") as f: 
+            data = f.read().split(",")
+            self.current_question_index = int(data[0])
+            self.score = int(data[1])
+        self.ask_questions()
             
